@@ -22,35 +22,35 @@ function Init() {
          const settings = check_settings();
 
          // WHEN DEVELOPING
-         if (developing) {
+         // if (developing) {
 
-            // FETCH DEV BUILD & LAST DEV BLOCK
-            const build = dev();
-            const dev_block = profiles.get('dev').block;
+         //    // FETCH DEV BUILD & LAST DEV BLOCK
+         //    const build = dev();
+         //    const dev_block = profiles.get('dev').block;
 
-            // IF DEV BLOCK IS IN RANGE
-            if (build.data.route.length >= dev_block) {
+         //    // IF DEV BLOCK IS IN RANGE
+         //    if (build.data.route.length >= dev_block) {
 
-               // OVERWRITE DEFAULT CURRENT
-               build.current = dev_block
-            
-            // OTHERWISE, DEFAULT TO ZERO & LOG ERROR
-            } else { console.log('Block limit exceeded. Defaulting to zero!'); }
+         //       // OVERWRITE DEFAULT CURRENT
+         //       build.current = dev_block
 
-            // LOAD DEV BUILD
-            dispatch({
-               type: 'load',
-               payload: build
-            })
+         //    // OTHERWISE, DEFAULT TO ZERO & LOG ERROR
+         //    } else { console.log('Block limit exceeded. Defaulting to zero!'); }
 
-            // SET LOADED PROFILE TO 'DEV'
-            dispatch({
-               type: 'loaded',
-               payload: 'dev'
-            })
+         //    // LOAD DEV BUILD
+         //    dispatch({
+         //       type: 'load',
+         //       payload: build
+         //    })
 
-         // OTHERWISE, LOAD RANDOM ROUTE
-         } else {
+         //    // SET LOADED PROFILE TO 'DEV'
+         //    dispatch({
+         //       type: 'loaded',
+         //       payload: 'dev'
+         //    })
+
+         // // OTHERWISE, LOAD RANDOM ROUTE
+         // } else {
 
             // IF ROUTE REQUEST IS UNDEFINED, LOAD RANDOM ROUTE
             if (window.request === undefined) {
@@ -66,7 +66,7 @@ function Init() {
                   payload: specific(window.request)
                })
             }
-         }
+         // }
 
          // IRREGARDLESS, UPDATE STORAGE STUFF IN STATE
          dispatch({
