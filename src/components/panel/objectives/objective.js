@@ -30,7 +30,7 @@ function Objective({ index, quests, waypoint }) {
          </div>
       );
    }
-   
+
    // GENERATE APPROPRIATE ROW
    const row = (header, type) => {
 
@@ -41,7 +41,7 @@ function Objective({ index, quests, waypoint }) {
          } else {
             return <div>{ header }</div>
          }
-   
+
       // ARRAYS
       } else if (header instanceof Array) {
          return <Multi
@@ -49,7 +49,7 @@ function Objective({ index, quests, waypoint }) {
             tag={ header[1] }
             quests={ quests }
          />
-   
+
       // DEFAULTS
       } else {
          return <Single
@@ -63,7 +63,7 @@ function Objective({ index, quests, waypoint }) {
       <div className="section">
          <div className="title">
             <div>{ index + 1 }. { waypoint.header }</div>
-            <div>{ waypoint.coords.x + '.' + waypoint.coords.y }</div>
+            <div class="waypoint">{ waypoint.coords.x + '.' + waypoint.coords.y }</div>
          </div>
          { content() }
       </div>
