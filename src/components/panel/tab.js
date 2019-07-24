@@ -4,18 +4,18 @@ function Tab({ selected, func, label }) {
 
    // LOCAL STATE
    const [local, set_local] = useState({
-      style: null
+      check: null
    });
 
    // TOGGLE SELECTED TAB
    useEffect(() => {
       set_local({
-         style: selected ? 'current' : null
+         check: selected ? 'current' : null
       })
    }, [selected])
 
    return (
-      <div id="objectives" onClick={ func } className={ local.style }>
+      <div id="objectives" onClick={ func } className={ local.check }>
          { label }
       </div>
    )

@@ -501,31 +501,8 @@
          "waypoints": [
             {
                "coords": { "x": 35, "y": 42 },
-               "align": "top",
                "header": "dutotar border",
                "type": "travel"
-            },
-            {
-               "coords": { "x": 52, "y": 42 },
-               "align": "right",
-               "header": "razor hill",
-               "starts": ["encroachment"],
-               "type": "hub"
-            },
-            {
-               "coords": { "x": 47, "y": 49 },
-               "align": "bottom",
-               "header": "razormane grounds",
-               "objectives": ["encroachment"],
-               "special": ["quillboars & scouts"],
-               "type": "objective"
-            },
-            {
-               "coords": { "x": 43, "y": 40 },
-               "header": "razormane grounds",
-               "objectives": ["encroachment"],
-               "special": ["battleguards & dustrunners"],
-               "type": "objective"
             },
             {
                "coords": { "x": 43, "y": 30 },
@@ -545,7 +522,7 @@
       },
       {
          "zone": "durotar",
-         "experience": 12.08,
+         "experience": 12.03,
          "waypoints": [
             {
                "coords": { "x": 35, "y": 29 },
@@ -574,45 +551,28 @@
                "header": "razorwind canyon",
                "objectives": ["winds in the desert"],
                "type": "objective"
-            },
-            {
-               "coords": { "x": 52, "y": 42 },
-               "align": "right",
-               "header": "razor hill",
-               "ends": ["encroachment"],
-               "type": "hub"
             }
          ]
       },
       {
          "zone": "durotar",
-         "experience": 12.25,
+         "experience": 12.20,
          "waypoints": [
             {
-               "coords": { "x": 52, "y": 42 },
-               "align": "right",
-               "header": "razor hill",
-               "ends": ["encroachment"],
-               "type": "hub"
+               "coords": { "x": 47, "y": 33 },
+               "header": "razorwind canyon",
+               "objectives": ["winds in the desert"],
+               "type": "objective"
             },
             {
                "coords": { "x": 46, "y": 23 },
-               "align": "right",
                "header": "rezlak",
                "ends": ["winds in the desert"],
                "starts": ["securing the lines"],
                "type": "quest"
             },
             {
-               "coords": { "x": 42, "y": 19 },
-               "align": "left",
-               "header": "rhinag",
-               "starts": ["need for a cure"],
-               "type": "quest"
-            },
-            {
                "coords": { "x": 46, "y": 12 },
-               "align": "top",
                "header": "orgrimmar gates",
                "type": "travel"
             }
@@ -620,34 +580,7 @@
       },
       {
          "zone": "orgrimmar",
-         "experience": 12.33,
-         "waypoints": [
-            {
-               "coords": { "x": 49, "y": 92 },
-               "align": "right",
-               "header": "orgrimmar gates",
-               "type": "travel"
-            },
-            {
-               "coords": { "x": 47, "y": 53 },
-               "align": "right",
-               "header": "kor'ghan",
-               "starts": ["finding the antidote"],
-               "ends": ["need for a cure"],
-               "special": ["abandon need for a cure"],
-               "type": "quest"
-            },
-            {
-               "coords": { "x": 32, "y": 38 },
-               "header": "thrall",
-               "starts": [["hidden enemies", "p1"]],
-               "type": "quest"
-            }
-         ]
-      },
-      {
-         "zone": "orgrimmar",
-         "experience": 12.33,
+         "experience": 12.23,
          "waypoints": [
             {
                "coords": { "x": 32, "y": 38 },
@@ -664,24 +597,19 @@
       },
       {
          "zone": "durotar",
-         "experience": 12.33,
+         "experience": 12.23,
          "waypoints": [
             {
                "coords": { "x": 46, "y": 12 },
+               "align": "top",
                "header": "orgrimmar gates",
                "type": "travel"
             },
             {
-               "coords": { "x": 44, "y": 18 },
-               "header": "rocktusk farm",
-               "objectives": ["finding the antidote"],
-               "type": "objective"
-            },
-            {
                "coords": { "x": 55, "y": 9 },
-               "align": "right",
+               "align": "top",
                "header": "skull rock cave",
-               "objectives": ["skull rock", ["hidden enemies", "p1"]],
+               "objectives": [["hidden enemies", "p1"]],
                "type": "objective"
             },
             {
@@ -696,7 +624,7 @@
       },
       {
          "zone": "durotar",
-         "experience": 12.61,
+         "experience": 12.58,
          "waypoints": [
             {
                "coords": { "x": 47, "y": 18 },
@@ -719,7 +647,7 @@
       },
       {
          "zone": "orgrimmar",
-         "experience": 12.70,
+         "experience": 12.66,
          "waypoints": [
             {
                "coords": { "x": 49, "y": 92 },
@@ -738,7 +666,6 @@
                "coords": { "x": 47, "y": 53 },
                "align": "right",
                "header": "cleft of shadow",
-               "ends": ["finding the antidote"],
                "objectives": [["hidden enemies", "p2"]],
                "type": "quest"
             }
@@ -746,13 +673,12 @@
       },
       {
          "zone": "orgrimmar",
-         "experience": 12.79,
+         "experience": 12.74,
          "waypoints": [
             {
                "coords": { "x": 47, "y": 53 },
                "align": "right",
                "header": "cleft of shadow",
-               "ends": ["finding the antidote"],
                "objectives": [["hidden enemies", "p2"]],
                "type": "quest"
             },
@@ -772,19 +698,13 @@
       },
       {
          "zone": "durotar",
-         "experience": 12.83,
+         "experience": 12.78,
          "waypoints": [
             {
                "coords": { "x": 46, "y": 12 },
                "align": "top",
                "header": "orgrimmar gates",
                "type": "travel"
-            },
-            {
-               "coords": { "x": 42, "y": 19 },
-               "header": "rhinag",
-               "completed": ["need for a cure"],
-               "type": "quest"
             },
             {
                "coords": { "x": 51, "y": 13 },
@@ -797,7 +717,7 @@
       },
       {
          "zone": "tirisfal",
-         "experience": 12.94,
+         "experience": 12.82,
          "waypoints": [
             {
                "coords": { "x": 61, "y": 59 },
@@ -821,25 +741,7 @@
       },
       {
          "zone": "undercity",
-         "experience": 12.94,
-         "waypoints": [
-            {
-               "coords": { "x": 71, "y": 44 },
-               "align": "right",
-               "header": "undercity lifts",
-               "type": "travel"
-            },
-            {
-               "coords": { "x": 63, "y": 48 },
-               "header": "undercity flightpath",
-               "special": ["learn the flightpath"],
-               "type": "flightpath"
-            }
-         ]
-      },
-      {
-         "zone": "undercity",
-         "experience": 12.94,
+         "experience": 12.82,
          "waypoints": [
             {
                "coords": { "x": 63, "y": 48 },
@@ -858,7 +760,7 @@
       },
       {
          "zone": "tirisfal",
-         "experience": 12.94,
+         "experience": 12.82,
          "waypoints": [
             {
                "coords": { "x": 62, "y": 65 },
@@ -875,7 +777,7 @@
       },
       {
          "zone": "silverpine",
-         "experience": 12.94,
+         "experience": 12.82,
          "waypoints": [
             {
                "coords": { "x": 67, "y": 6 },
@@ -896,24 +798,10 @@
                "ends": [["escorting erland", "f"]],
                "starts": ["the deathstalkers report"],
                "type": "quest"
-            }
-         ]
-      },
-      {
-         "zone": "silverpine",
-         "experience": 13.12,
-         "waypoints": [
-            {
-               "coords": { "x": 53, "y": 13 },
-               "align": "right",
-               "header": "rane yorick",
-               "ends": [["escorting erland", "f"]],
-               "starts": ["the deathstalkers report"],
-               "type": "quest"
             },
             {
                "coords": { "x": 46, "y": 43 },
-               "align": "right",
+               "align": "bottom",
                "header": "sepulcher flightpath",
                "special": ["learn the flightpath"],
                "type": "flightpath"
@@ -922,7 +810,7 @@
                "coords": { "x": 43, "y": 41 },
                "header": "sepulcher",
                "ends": ["the deathstalkers report", "delivery to silverpine"],
-               "starts": [["a recipe for death", "p1"], "lost deathstalkers", "the dead fields", "zinge's delivery", "prove your worth"],
+               "starts": ["prove your worth", ["a recipe for death", "p1"], "lost deathstalkers", "the dead fields", "zinge's delivery"],
                "completed": ["speak with renferrel"],
                "type": "hub"
             }
@@ -930,12 +818,15 @@
       },
       {
          "zone": "silverpine",
-         "experience": 13.22,
+         "experience": 13.11,
          "waypoints": [
             {
                "coords": { "x": 43, "y": 41 },
                "align": "bottom",
                "header": "sepulcher",
+               "ends": ["the deathstalkers report", "delivery to silverpine"],
+               "starts": [["a recipe for death", "p1"], "lost deathstalkers", "the dead fields", "zinge's delivery", "prove your worth"],
+               "completed": ["speak with renferrel"],
                "type": "hub"
             },
             {
@@ -964,11 +855,11 @@
       },
       {
          "zone": "silverpine",
-         "experience": 13.39,
+         "experience": 13.19,
          "waypoints": [
             {
                "coords": { "x": 56, "y": 13 },
-               "align": "bottom",
+               "align": "right",
                "header": "silverpine road",
                "objectives": ["wild hearts"],
                "type": "objective"
@@ -982,7 +873,6 @@
             },
             {
                "coords": { "x": 36, "y": 15 },
-               "align": "bottom",
                "header": "the skittering dark",
                "objectives": [["a recipe for death", "p1"]],
                "special": ["die & take ress sickness"],
@@ -992,19 +882,19 @@
       },
       {
          "zone": "silverpine",
-         "experience": 13.65,
+         "experience": 13.35,
          "waypoints": [
             {
                "coords": { "x": 43, "y": 41 },
                "align": "bottom",
                "header": "sepulcher",
-               "ends": ["wild hearts", "the dead fields", "prove your worth"],
-               "starts": ["return to quinn", "the decrepit ferry", ["arugal's folly", "p1"]],
+               "ends": ["prove your worth", "wild hearts", "the dead fields"],
+               "starts": [["arugal's folly", "p1"], "return to quinn", "the decrepit ferry"],
                "type": "hub"
             },
             {
                "coords": { "x": 58, "y": 35 },
-               "align": "right",
+               "align": "bottom",
                "header": "corpse laden boat",
                "ends": ["the decrepit ferry"],
                "starts": ["rot hide clues"],
@@ -1018,7 +908,7 @@
             },
             {
                "coords": { "x": 53, "y": 13 },
-               "align": "right",
+               "align": "top",
                "header": "the ivar patch",
                "ends": ["return to quinn"],
                "starts": ["ivar the foul"],
@@ -1034,7 +924,7 @@
       },
       {
          "zone": "silverpine",
-         "experience": 14.09,
+         "experience": 13.78,
          "waypoints": [
             {
                "coords": { "x": 51, "y": 14 },
@@ -1052,6 +942,7 @@
             },
             {
                "coords": { "x": 43, "y": 41 },
+               "align": "bottom",
                "header": "sepulcher",
                "ends": ["rot hide clues", ["arugal's folly", "p1"]],
                "starts": [["arugal's folly", "p2"], "the engraved ring", "border crossing"],
@@ -1059,7 +950,7 @@
             },
             {
                "coords": { "x": 56, "y": 46 },
-               "align": "right",
+               "align": "bottom",
                "header": "deep elem mine",
                "objectives": [["arugal's folly", "p2"]],
                "type": "objective"
@@ -1068,30 +959,11 @@
       },
       {
          "zone": "silverpine",
-         "experience": 14.28,
-         "waypoints": [
-            {
-               "coords": { "x": 56, "y": 46 },
-               "align": "right",
-               "header": "deep elem mine",
-               "objectives": [["arugal's folly", "p2"]],
-               "type": "objective"
-            },
-            {
-               "coords": { "x": 43, "y": 41 },
-               "header": "sepulcher",
-               "ends": [["arugal's folly", "p2"]],
-               "starts": [["arugal's folly", "p3"]],
-               "type": "hub"
-            }
-         ]
-      },
-      {
-         "zone": "silverpine",
-         "experience": 14.38,
+         "experience": 13.94,
          "waypoints": [
             {
                "coords": { "x": 43, "y": 41 },
+               "align": "top",
                "header": "sepulcher",
                "ends": [["arugal's folly", "p2"]],
                "starts": [["arugal's folly", "p3"]],
@@ -1099,14 +971,13 @@
             },
             {
                "coords": { "x": 56, "y": 46 },
-               "align": "right",
+               "align": "top",
                "header": "deep elem mine",
                "objectives": [["arugal's folly", "p3"]],
                "type": "objective"
             },
             {
                "coords": { "x": 50, "y": 60 },
-               "align": "bottom",
                "header": "dalaran crate",
                "ends": ["border crossing"],
                "starts": ["maps and runes"],
@@ -1117,10 +988,11 @@
       },
       {
          "zone": "silverpine",
-         "experience": 14.49,
+         "experience": 14.21,
          "waypoints": [
             {
                "coords": { "x": 43, "y": 41 },
+               "align": "top",
                "header": "sepulcher",
                "ends": [["arugal's folly", "p2"], "maps and runes"],
                "completed": ["dalar's analysis", "dalaran's intentions"],
@@ -1128,7 +1000,7 @@
             },
             {
                "coords": { "x": 46, "y": 44 },
-               "align": "bottom",
+               "align": "right",
                "header": "sepulcher flightpath",
                "special": ["fly to undercity"],
                "type": "flightpath"
@@ -1137,7 +1009,7 @@
       },
       {
          "zone": "undercity",
-         "experience": 14.65,
+         "experience": 14.38,
          "waypoints": [
             {
                "coords": { "x": 63, "y": 48 },
@@ -1169,7 +1041,7 @@
       },
       {
          "zone": "tirisfal",
-         "experience": 14.73,
+         "experience": 14.42,
          "waypoints": [
             {
                "coords": { "x": 62, "y": 65 },

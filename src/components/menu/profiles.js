@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from "../../context";
 import { specific } from '../../funcs/build';
+import Main from './main';
 
 // ALL PROFILES
 function Profiles({ hide }) {
@@ -9,42 +10,34 @@ function Profiles({ hide }) {
    const { state, dispatch } = useContext(Context);
 
    // REMOVE PROFILE
-   const remove = (name) => {
+   function remove(name) {
 
       // REMOVE PROFILE FROM PROFILES HASHMAP
       state.profiles.delete(name);
 
       // UPDATE STORAGE
       dispatch({
-         type: 'update_profiles',
-         payload: state.profiles
-      });
+         type: 'remove-profile',
+         payload: {
+            profiles: state.profiles,
+            msg: 'profile "' + header + '" removed'
+         }
+      })
 
       // HIDE SUBMENU
       hide();
    }
 
-   // OPEN PROFILE
-   const open = (header, details) => {
-         
-      // LOAD ROUTE
-      dispatch({
-         type: 'load',
-         payload: specific(details)
-      })
+   // LOAD PROFILE
+   function load(header, details) {
 
-      // MARK PROFILE AS LOADED
+      // UPDATE STORAGE
       dispatch({
-         type: 'loaded',
-         payload: header
-      })
-
-      // SHOW MESSAGE
-      dispatch({
-         type: 'show-message',
+         type: 'load-profile',
          payload: {
-            type: 'good',
-            value: 'profile "' + header + '" loaded'
+            build: specific(details),
+            profile: header,
+            msg: 'profile "' + header + '" loaded'
          }
       })
 
@@ -58,49 +51,50 @@ function Profiles({ hide }) {
       // CONVERT TO MAPPABLE ARRAY
       const profiles = Array.from(state.profiles);
 
-      // GENERATE & RETURN SELECTORS
+      // GENERATE & RETURN PROFILE ROWS
       return profiles.map((item, index) =>
-         <Profile
-            key={ index }
-            header={ item[0] }
-            details={ item[1] }
-            remove={ remove }
-            open={ open }
-            state={ state }
-         />
+         <Main header='Load Progress'>
+            <Profile
+               key={ index }
+               header={ item[0] }
+               details={ item[1] }
+               remove={ remove }
+               load={ load }
+               state={ state }
+            />
+         </Main>
       )
 
-   // OTHERWISE, RETURN ERROR
-   } else { return <div className="dead">No Profiles Found</div> }
+   // OTHERWISE, RETURN FALLBACK TEXT
+   } else { return (
+      <Main header='Load Progress'>
+         <div className="dead">No Profiles Found</div>
+      </Main>
+   )}
 }
 
-// SINGLE PROFILE
-function Profile({ header, details, open, remove, state }) {
-   if (state.loaded === header) { return (
-      <div className={ 'item' } id={ 'loaded' }>
-         <div className={ 'icon' } id={ details.race } />
-         <div className={ 'header' }>
-            { header }
+// PROFILE ROW
+function Profile({ header, details, load, remove, state }) {
+   switch(state.loaded) {
+
+      // IS LOADED
+      case header: { return (
+         <div className={ 'item' } id={ 'loaded' }>
+            <div className={ 'icon' } id={ details.race } />
+            <div className={ 'header' }>{ header }</div>
+            <div className={ 'loaded' }>Loaded</div>
          </div>
-         <div className={ 'loaded' }>Loaded</div>
-      </div>
-   )} else { return (
-      <div className={ 'item' }>
-         <div
-            className={ 'icon' }
-            id={ details.race }
-            onClick={() => { open(header, details) }}
-         />
-         <div className={ 'header' } onClick={() => { open(header, details) }}>
-            { header }
+      )}
+
+      // OTHERWISE
+      default: { return (
+         <div className={ 'item' } onClick={() => { load(header, details) }}>
+            <div className={ 'icon' } id={ details.race } />
+            <div className={ 'header' }>{ header }</div>
+            <div className={ 'action' } id={ 'remove' } />
          </div>
-         <div
-            className={ 'action' }
-            id={ 'remove' }
-            onClick={() => { remove(header) }}
-         />
-      </div>
-   )}
+      )}
+   }
 }
 
 export default Profiles;

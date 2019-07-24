@@ -2,7 +2,7 @@
    "path": [
       {
          "zone": "morogh",
-         "experience": 5.67,
+         "experience": 5.54,
          "waypoints": [
             {
                "coords": { "x": 34, "y": 72 },
@@ -37,7 +37,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 6.17,
+         "experience": 5.97,
          "waypoints": [
             {
                "coords": { "x": 51, "y": 51 },
@@ -94,7 +94,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 7.34,
+         "experience": 7.13,
          "waypoints": [
             {
                "coords": { "x": 27, "y": 47 },
@@ -129,7 +129,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 7.52,
+         "experience": 7.26,
          "waypoints": [
             {
                "coords": { "x": 39, "y": 54 },
@@ -173,7 +173,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 8.09,
+         "experience": 7.85,
          "waypoints": [
             {
                "coords": { "x": 50, "y": 49 },
@@ -188,7 +188,7 @@
                "align": "top",
                "header": "shimmer ridge",
                "objectives": ["the perfect stout"],
-               "special": ["abysmal drop rate"],
+               "special": ["loot baskets"],
                "type": "objective"
             },
             {
@@ -227,7 +227,7 @@
       },
       {
          "zone": "wetlands",
-         "experience": 9.19,
+         "experience": 8.51,
          "waypoints": [
             {
                "coords": { "x": 11, "y": 44 },
@@ -245,7 +245,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 9.20,
+         "experience": 8.51,
          "waypoints": [
             {
                "coords": { "x": 47, "y": 53 },
@@ -271,7 +271,7 @@
       },
       {
          "zone": "ironforge",
-         "experience": 9.51,
+         "experience": 8.82,
          "waypoints": [
             {
                "coords": { "x": 12, "y": 89 },
@@ -303,7 +303,7 @@
       },
       {
          "zone": "stormwind",
-         "experience": 9.51,
+         "experience": 8.87,
          "waypoints": [
             {
                "coords": { "x": 63, "y": 8 },
@@ -328,7 +328,7 @@
       },
       {
          "zone": "elwynn",
-         "experience": 9.51,
+         "experience": 8.87,
          "waypoints": [
             {
                "coords": { "x": 32, "y": 49 },
@@ -338,10 +338,10 @@
             },
             {
                "coords": { "x": 42, "y": 66 },
-               "align": "right",
+               "align": "bottom",
                "header": "goldshire",
                "completed": ["a fishy peril"],
-               "starts": ["gold dust exchange", "further concerns", "elmore's task", "kobold candles"],
+               "starts": ["gold dust exchange", "further concerns", "kobold candles"],
                "special": ["set hearthstone"],
                "type": "hub"
             },
@@ -364,7 +364,7 @@
       },
       {
          "zone": "elwynn",
-         "experience": 9.87,
+         "experience": 9.15,
          "waypoints": [
             {
                "coords": { "x": 74, "y": 72 },
@@ -407,7 +407,7 @@
       },
       {
          "zone": "elwynn",
-         "experience": 10.19,
+         "experience": 9.35,
          "waypoints": [
             {
                "coords": { "x": 80, "y": 67 },
@@ -442,7 +442,7 @@
       },
       {
          "zone": "elwynn",
-         "experience": 10.67,
+         "experience": 9.73,
          "waypoints": [
             {
                "coords": { "x": 69, "y": 79 },
@@ -468,7 +468,7 @@
       },
       {
          "zone": "redridge",
-         "experience": 10.85,
+         "experience": 9.97,
          "waypoints": [
             {
                "coords": { "x": 8, "y": 72 },
@@ -487,39 +487,39 @@
       },
       {
          "zone": "elwynn",
-         "experience": 10.85,
+         "experience": 9.97,
          "waypoints": [
             {
                "coords": { "x": 42, "y": 66 },
                "align": "top",
                "header": "goldshire",
                "ends": ["gold dust exchange", "kobold candles", "deliver thomas' report"],
-               "starts": ["shipment to stormwind"],
+               "starts": ["shipment to stormwind", "elmore's task"],
                "type": "hub"
             },
             {
                "coords": { "x": 18, "y": 83 },
                "header": "verna furlbrow",
-               "starts": ["westfall stew"],
+               "starts": [["westfall stew", "p1"]],
                "type": "quest"
             }
          ]
       },
       {
          "zone": "westfall",
-         "experience": 11.15,
+         "experience": 10.26,
          "waypoints": [
             {
                "coords": { "x": 60, "y": 19 },
                "align": "top",
                "header": "verna furlbrow",
-               "starts": ["westfall stew"],
+               "starts": [["westfall stew", "p1"]],
                "type": "quest"
             },
             {
                "coords": { "x": 56, "y": 31 },
                "header": "salma saldean",
-               "ends": ["westfall stew"],
+               "ends": [["westfall stew", "p1"]],
                "type": "quest"
             },
             {
@@ -538,7 +538,7 @@
       },
       {
          "zone": "stormwind",
-         "experience": 11.30,
+         "experience": 10.44,
          "waypoints": [
             {
                "coords": { "x": 66, "y": 62 },
@@ -564,6 +564,7 @@
                "coords": { "x": 65, "y": 6 },
                "align": "top",
                "header": "deeprun tram",
+               "completed": ["deeprun rat roundup"],
                "special": ["ride to ironforge"],
                "type": "travel"
             }
@@ -571,12 +572,13 @@
       },
       {
          "zone": "ironforge",
-         "experience": 11.40,
+         "experience": 10.68,
          "waypoints": [
             {
                "coords": { "x": 78, "y": 52 },
                "align": "top",
                "header": "deeprun tram",
+               "completed": ["deeprun rat roundup"],
                "type": "quest"
             },
             {
@@ -595,7 +597,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 11.50,
+         "experience": 10.68,
          "waypoints": [
             {
                "coords": { "x": 53, "y": 35 },
@@ -620,7 +622,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 11.55,
+         "experience": 10.88,
          "waypoints": [
             {
                "coords": { "x": 71, "y": 55 },
@@ -652,7 +654,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 11.72,
+         "experience": 11.07,
          "waypoints": [
             {
                "coords": { "x": 62, "y": 47 },
@@ -691,7 +693,7 @@
       },
       {
          "zone": "morogh",
-         "experience": 11.91,
+         "experience": 11.24,
          "waypoints": [
             {
                "coords": { "x": 78, "y": 38 },
@@ -716,7 +718,7 @@
       },
       {
          "zone": "loch",
-         "experience": 11.99,
+         "experience": 11.33,
          "waypoints": [
             {
                "coords": { "x": 18, "y": 16 },
@@ -735,29 +737,24 @@
                "coords": { "x": 35, "y": 47 },
                "align": "right",
                "header": "thelsamar",
-               "starts": ["rat catching", "stormpike's order", "thelsamar blood sausages", "honor students"],
+               "starts": ["rat catching", "thelsamar blood sausages", "honor students"],
                "type": "hub"
             },
             {
                "coords": { "x": 34, "y": 51 },
-               "align": "right",
+               "align": "bottom",
                "header": "loch modan flightpath",
                "ends": ["honor students"],
                "starts": ["ride to ironforge"],
-               "special": ["hearthstone to ironforge"],
+               "special": ["fly to ironforge"],
                "type": "flightpath"
             }
          ]
       },
       {
          "zone": "ironforge",
-         "experience": 12.13,
+         "experience": 11.48,
          "waypoints": [
-            {
-               "coords": { "x": 19, "y": 51 },
-               "header": "ironforge inn",
-               "type": "travel"
-            },
             {
                "coords": { "x": 51, "y": 26 },
                "align": "top",
@@ -779,7 +776,7 @@
       },
       {
          "zone": "loch",
-         "experience": 12.17,
+         "experience": 11.55,
          "waypoints": [
             {
                "coords": { "x": 34, "y": 51 },
@@ -805,6 +802,7 @@
                "align": "top",
                "header": "silver stream mine",
                "objectives": ["filthy paws", "rat catching"],
+               "special": ["abysmal droprate on ears"],
                "type": "objective"
             },
             {
@@ -818,7 +816,7 @@
       },
       {
          "zone": "loch",
-         "experience": 12.82,
+         "experience": 12.13,
          "waypoints": [
             {
                "coords": { "x": 23, "y": 18 },
@@ -851,28 +849,7 @@
       },
       {
          "zone": "loch",
-         "experience": 13.27,
-         "waypoints": [
-            {
-               "coords": { "x": 33, "y": 76 },
-               "align": "bottom",
-               "header": "stonesplinter valley",
-               "objectives": ["the trogg threat", ["in defense of the king's lands", "p1"]],
-               "type": "objective"
-            },
-            {
-               "coords": { "x": 23, "y": 74 },
-               "align": "bottom",
-               "header": "valley of kings",
-               "ends": ["the trogg threat", ["in defense of the king's lands", "p1"]],
-               "starts": [["in defense of the king's lands", "p2"]],
-               "type": "quest"
-            }
-         ]
-      },
-      {
-         "zone": "loch",
-         "experience": 13.49,
+         "experience": 12.62,
          "waypoints": [
             {
                "coords": { "x": 23, "y": 74 },
@@ -892,7 +869,7 @@
       },
       {
          "zone": "loch",
-         "experience": 13.62,
+         "experience": 13.03,
          "waypoints": [
             {
                "coords": { "x": 36, "y": 82 },
@@ -918,7 +895,7 @@
       },
       {
          "zone": "wetlands",
-         "experience": 13.73,
+         "experience": 13.13,
          "waypoints": [
             {
                "coords": { "x": 9, "y": 60 },
@@ -937,7 +914,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 13.73,
+         "experience": 13.13,
          "waypoints": [
             {
                "coords": { "x": 32, "y": 44 },
@@ -957,7 +934,7 @@
                "coords": { "x": 39, "y": 43 },
                "align": "bottom",
                "header": "upper auberdine",
-               "starts": ["deep ocean, vast sea", ["bashal'aran", "p1"], "tools of the highborne", "plagued lands", ["how big a threat?", "p1"], ["the tower of althalaxx", "p1"]],
+               "starts": ["deep ocean, vast sea", ["bashal'aran", "p1"], "tools of the highborne", "plagued lands", ["how big a threat?", "p1"]],
                "type": "hub"
             },
             {
@@ -970,39 +947,20 @@
             },
             {
                "coords": { "x": 46, "y": 37 },
-               "align": "bottom",
-               "header": "bashal'aran",
-               "objectives": [["bashal'aran", "p2"]],
-               "type": "objective"
-            }
-         ]
-      },
-      {
-         "zone": "darkshore",
-         "experience": 13.92,
-         "waypoints": [
-            {
-               "coords": { "x": 46, "y": 37 },
                "align": "right",
                "header": "bashal'aran",
                "objectives": [["bashal'aran", "p2"]],
                "type": "objective"
-            },
-            {
-               "coords": { "x": 44, "y": 36 },
-               "header": "asterion",
-               "ends": [["bashal'aran", "p2"]],
-               "starts": [["bashal'aran", "p3"]],
-               "type": "quest"
             }
          ]
       },
       {
          "zone": "darkshore",
-         "experience": 13.99,
+         "experience": 13.28,
          "waypoints": [
             {
                "coords": { "x": 44, "y": 36 },
+               "align": "bottom",
                "header": "asterion",
                "ends": [["bashal'aran", "p2"]],
                "starts": [["bashal'aran", "p3"]],
@@ -1010,7 +968,7 @@
             },
             {
                "coords": { "x": 48, "y": 37 },
-               "align": "right",
+               "align": "bottom",
                "header": "bashal'aran",
                "objectives": [["bashal'aran", "p3"]],
                "type": "objective"
@@ -1019,7 +977,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 14.02,
+         "experience": 13.40,
          "waypoints": [
             {
                "coords": { "x": 48, "y": 37 },
@@ -1074,7 +1032,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 14.24,
+         "experience": 13.65,
          "waypoints": [
             {
                "coords": { "x": 39, "y": 53 },
@@ -1115,7 +1073,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 14.47,
+         "experience": 13.93,
          "waypoints": [
             {
                "coords": { "x": 32, "y": 46 },
@@ -1174,7 +1132,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 14.89,
+         "experience": 14.42,
          "waypoints": [
             {
                "coords": { "x": 43, "y": 61 },
@@ -1197,32 +1155,30 @@
                "type": "objective"
             },
             {
-               "coords": { "x": 37, "y": 45 },
-               "header": "lower auberdine",
-               "ends": ["the red crystal", "beached sea turtle", "beached sea creature", "for love eternal"],
-               "starts": ["as water cascades", "fruit of the sea"],
-               "special": ["fill the empty vial at the moonwell.", "be level 15"],
-               "type": "hub"
-            },
-            {
                "coords": { "x": 39, "y": 43 },
                "align": "top",
                "header": "upper auberdine",
                "ends": ["cleansing of the infected", ["how big a threat?", "p2"], "tools of the highborne"],
                "starts": ["tharnariun's hope"],
                "type": "hub"
+            },
+            {
+               "coords": { "x": 37, "y": 45 },
+               "header": "lower auberdine",
+               "ends": ["the red crystal", "beached sea turtle", "beached sea creature", "for love eternal"],
+               "starts": ["as water cascades", "fruit of the sea"],
+               "special": ["fill the empty vial at the moonwell.", "be level 15"],
+               "type": "hub"
             }
          ]
       },
       {
          "zone": "darkshore",
-         "experience": 15.36,
+         "experience": 15.00,
          "waypoints": [
             {
-               "coords": { "x": 39, "y": 43 },
-               "header": "upper auberdine",
-               "ends": ["cleansing of the infected", ["how big a threat?", "p2"], "tools of the highborne"],
-               "starts": ["tharnariun's hope"],
+               "coords": { "x": 37, "y": 45 },
+               "header": "lower auberdine",
                "type": "hub"
             },
             {
@@ -1272,7 +1228,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 15.68,
+         "experience": 15.29,
          "waypoints": [
             {
                "coords": { "x": 46, "y": 26 },
@@ -1322,7 +1278,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 15.98,
+         "experience": 15.53,
          "waypoints": [
             {
                "coords": { "x": 56, "y": 27 },
@@ -1372,7 +1328,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 16.50,
+         "experience": 16.25,
          "waypoints": [
             {
                "coords": { "x": 37, "y": 45 },
@@ -1393,7 +1349,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 16.51,
+         "experience": 16.34,
          "waypoints": [
             {
                "coords": { "x": 51, "y": 35 },
@@ -1414,7 +1370,7 @@
       },
       {
          "zone": "ironforge",
-         "experience": 16.56,
+         "experience": 16.47,
          "waypoints": [
             {
                "coords": { "x": 19, "y": 51 },
@@ -1433,20 +1389,20 @@
                "coords": { "x": 77, "y": 51 },
                "align": "top",
                "header": "deeprun tram",
-               "completed": ["deeprun rat roundup", "me brother, nipsy"],
+               "completed": ["me brother, nipsy"],
                "type": "travel"
             }
          ]
       },
       {
          "zone": "stormwind",
-         "experience": 16.56,
+         "experience": 16.50,
          "waypoints": [
             {
                "coords": { "x": 63, "y": 8 },
                "align": "right",
                "header": "deeprun tram",
-               "completed": ["deeprun rat roundup", "me brother, nipsy"],
+               "completed": ["me brother, nipsy"],
                "type": "travel"
             },
             {

@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
 function PrevNext({ visibility, type, func }) {
-   const [local, set_local] = useState({
-      style: {
-         opacity: 0
-      }
+
+   // OPACITY STATE
+   const [opacity, set_opacity] = useState({
+      opacity: 0
    })
 
-   // TOGGLE VISIBILITY
+   // TOGGLE OPACITY
    useEffect(() => {
-      set_local({
-         style: {
-            opacity: visibility ? 1 : 0
-         }
+      set_opacity({
+         opacity: visibility ? 1 : 0
       })
    }, [visibility])
 
    return (
       <div
          id={ type }
-         style={ local.style }
+         style={ opacity }
          onClick={ func }
       />
    )

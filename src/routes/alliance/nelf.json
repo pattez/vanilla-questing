@@ -64,6 +64,7 @@
                "header": "dolanaar tower",
                "ends": ["zenn's bidding"],
                "starts": ["seek redemption!", "denalan's earth", "a troubling breeze", "twisted hatred", "the emerald dreamcatcher"],
+               "special": ["buy 1x skinning knife"],
                "type": "quest"
             },
             {
@@ -72,7 +73,6 @@
                "header": "dolanaar",
                "ends": ["dolanaar delivery", ["crown of the earth", "p2"]],
                "starts": [["crown of the earth", "p3"]],
-               "special": ["buy 1x skinning knife"],
                "type": "quest"
             },
             {
@@ -1364,7 +1364,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 16.41,
+         "experience": 16.35,
          "waypoints": [
             {
                "coords": { "x": 37, "y": 45 },
@@ -1385,7 +1385,7 @@
       },
       {
          "zone": "darkshore",
-         "experience": 16.42,
+         "experience": 16.36,
          "waypoints": [
             {
                "coords": { "x": 51, "y": 35 },
@@ -1414,7 +1414,7 @@
       },
       {
          "zone": "wetlands",
-         "experience": 16.52,
+         "experience": 16.46,
          "waypoints": [
             {
                "coords": { "x": 5, "y": 57 },
@@ -1433,7 +1433,7 @@
       },
       {
          "zone": "ironforge",
-         "experience": 16.52,
+         "experience": 16.46,
          "waypoints": [
             {
                "coords": { "x": 56, "y": 48 },
@@ -1459,7 +1459,7 @@
       },
       {
          "zone": "stormwind",
-         "experience": 16.56,
+         "experience": 16.50,
          "waypoints": [
             {
                "coords": { "x": 63, "y": 8 },
@@ -1512,7 +1512,7 @@
       },
       {
          "zone": "elwynn",
-         "experience": 16.62,
+         "experience": 16.56,
          "waypoints": [
             {
                "coords": { "x": 32, "y": 49 },
@@ -1544,7 +1544,7 @@
       },
       {
          "zone": "redridge",
-         "experience": 16.62,
+         "experience": 16.56,
          "waypoints": [
             {
                "coords": { "x": 8, "y": 72 },
@@ -1563,7 +1563,7 @@
       },
       {
          "zone": "elwynn",
-         "experience": 16.62,
+         "experience": 16.56,
          "waypoints": [
             {
                "coords": { "x": 42, "y": 66 },
@@ -1581,7 +1581,7 @@
       },
       {
          "zone": "westfall",
-         "experience": 16.62,
+         "experience": 16.56,
          "waypoints": [
             {
                "coords": { "x": 60, "y": 19 },

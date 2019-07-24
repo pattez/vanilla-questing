@@ -31,7 +31,31 @@ function filter({ current, data }) {
       
                // QUEST NAME
                const name = quest_name(quest);
-               container.set(name, quest);
+
+               // ADD IT
+               container.set(name, {
+                  quest: quest,
+                  status: false
+               });
+            });
+         }
+
+         // LOOP THROUGH OBJECTIVES
+         if (waypoint.objectives !== undefined) {
+            waypoint.objectives.forEach(quest => {
+
+               // QUEST NAME
+               const name = quest_name(quest);
+
+               // IF THE QUEST HAS BEEN PICKED UP
+               if (container.has(name)) {
+
+                  // CHANGE STATUS
+                  container.set(name, {
+                     quest: quest,
+                     status: true
+                  });
+               }
             });
          }
       });
@@ -54,26 +78,31 @@ function quest_name(quest) {
 }
 
 // FETCH QUEST ID FOR SIDEPANEL LINKS
-function fetch_id({ quests, header, tag }) {
+function fetch_id(quest, quests) {
+   switch(typeof quest) {
 
-   // PLACEHOLDER
-   let id = quests[header.toString().toLowerCase()];
-   
-   // IF THE QUEST IS TAGGED, FETCH THE CORRECT ID
-   if (tag !== undefined && tag[0] === 'p') {
-      id = quests[header.toString().toLowerCase()][tag[1] - 1]
+      // STRING
+      case 'string': {
+         return quests[quest.toString().toLowerCase()];
+      }
+
+      // ARRAYS
+      default: {
+         switch(quest[1][0].toLowerCase()) {
+
+            // CHAIN QUEST
+            case 'p': {
+               const id = parseInt(quest[1].split('-')[0].replace(/\D/g, '')) - 1;
+               return quests[quest[0].toString().toLowerCase()][id];
+            }
+
+            // SOMETHING ELSE
+            default: {
+               return quests[quest[0].toString().toLowerCase()];
+            }
+         }
+      }
    }
-
-   // IF THE ID CANT BE LOCATED, LOG ERROR
-   if (id === undefined) {
-      console.log(header + ' not found!');
-   }
-
-   if (id instanceof Array) {
-      console.log(header + ' is an array')
-   }
-
-   return id;
 }
 
 export {

@@ -6,10 +6,8 @@ function Hearthstone() {
    // GLOBAL STATE
    const { state } = useContext(Context);
 
-   // LOCAL STATE
-   const [local, set_local] = useState({
-      location: null
-   })
+   // LOCATION STATE
+   const [location, set_location] = useState(null)
 
    // FIND LATEST HEARTHSTONE LOCATION
    useEffect(() => {
@@ -23,17 +21,15 @@ function Hearthstone() {
          value = filtered[filtered.length - 1].zone;
       }
 
-      // UPDATE LOCAL STATE ACCORDINGLY
-      set_local({
-         location: value
-      })
+      // UPDATE LOCATION STATE
+      set_location(value)
 
    }, [state.current, state.data])
 
    return (
       <div id="hearthstone" className="split">
          <div>Hearthstone</div>
-         <div>{ local.location }</div>
+         <div>{ location }</div>
       </div>
    )
 }

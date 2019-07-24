@@ -16,7 +16,7 @@
          color: rgb(214, 214, 214);
          margin-bottom: 1px;
          position: relative;
-         transition: 0.3s;
+         transition: width 0.3s;
          text-shadow: 1px 1px #242424;
       }
 
@@ -36,7 +36,7 @@
       #level #bar, #progress #bar {
          background: rgba(255, 255, 255, 0.062);
          border-right: 1px solid rgba(255, 255, 255, 0.11);
-         transition: 0.2s;
+         transition: width 0.2s;
          position: absolute;
          top: 0px;
          left: 0px;
@@ -62,7 +62,7 @@
             padding-bottom: 6px;
             color: white;
             cursor: pointer;
-            transition: 0.2s;
+            transition: background 0.2s;
          }
 
          #objectives {
@@ -108,14 +108,28 @@
             padding: 1px;
             margin-bottom: 4px;
             text-shadow: 1px 1px #242424;
-            white-space: pre-wrap;
-
-            .waypoint {
-               color: limegreen;
-            }
+            position: relative;
          }
 
-         .section:last-child { margin-bottom: 2px; }
+         .section:last-child {
+            margin-bottom: 2px;
+         }
+
+         .ends-icon, .completed-icon, .starts-icon, .objectives-icon, .special-icon {
+            background-color: rgba(0, 0, 0, 0.199);
+            background-image: url('../images/icons/ends.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            margin-top: 1px;
+            border-right: 1px solid rgba(0, 0, 0, 0.425);
+         }
+
+         .starts-icon { background-image: url('../images/icons/starts.png'); }
+         .objectives-icon { background-image: url('../images/icons/objectives.png'); }
+         .special-icon { background-image: url('../images/icons/special.png'); }
 
          .title {
             display: table;
@@ -130,19 +144,28 @@
             div:last-child { text-align: right; }
          }
 
-         .title, .ends, .starts, .objectives, .special, .quest, .completed {
+         .title, .ends-row, .completed-row, .starts-row, .objectives-row, .special-row, .quest {
             background: rgba(255, 255, 255, 0.130);
             margin-top: 1px;
             padding: 5px 7px;
+            padding-left: 35px;
             color: #F1F1F1;
          }
 
-         .ends { background: rgba(94, 207, 94, 0.342); }
-         .starts { background: rgba(255, 255, 29, 0.37); }
-         .objectives { background: rgba(226, 84, 84, 0.418); }
-         .special { background: rgba(94, 125, 192, 0.507); }
+         .title, .quest {
+            padding-left: 7px;
+         }
+
+         .title {
+            margin-top: 0px;
+         }
+
+         .ends-row { background: rgba(94, 207, 94, 0.342); }
+         .completed-row { background: rgba(179, 85, 216, 0.507); }
+         .starts-row { background: rgba(255, 255, 29, 0.37); }
+         .objectives-row { background: rgba(226, 84, 84, 0.418); }
+         .special-row { background: rgba(94, 125, 192, 0.507); }
          .quest { background: rgba(226, 171, 108, 0.486); }
-         .completed { background: rgba(179, 85, 216, 0.507); }
 
          .special a {
             text-decoration: underline;

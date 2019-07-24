@@ -1,7 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import { update as update_profiles, change } from "./funcs/storage";
 import { update_bind, update_prop } from "./funcs/settings";
-import Prompt from './components/prompt';
 
 // DECLARE CONTEXT
 const Context = createContext();
@@ -9,6 +8,51 @@ const Context = createContext();
 // CONTEXT REDUCER
 function reducer(state, action) {
    switch (action.type) {
+
+      // ON THE INITIAL PAGE LOAD
+      case 'init': {
+         return {
+            ...state,
+            profiles: action.payload.profiles,
+            settings: action.payload.settings,
+            data: action.payload.data,
+            current: action.payload.current,
+            prompt: {
+               ...state.prompt,
+               visible: false
+            }
+         }
+      }
+
+      // LOAD PROFILE
+      case 'load-profile': {
+         return {
+            ...state,
+            data: action.payload.build.data,
+            current: action.payload.build.current,
+            loaded: action.payload.profile,
+            message: {
+               visible: true,
+               type: 'good',
+               value: action.payload.msg
+            }
+         }
+      }
+
+      // REMOVE PROFILE
+      case 'remove-profile': {
+         return {
+            ...state,
+            profiles: action.payload.profiles,
+            message: {
+               visible: true,
+               type: 'good',
+               value: action.payload.msg
+            }
+         }
+      }
+
+      // OLD STUFF ---------------------------------------------
 
       // CHANGE BLOCK
       case 'block': {
@@ -149,9 +193,11 @@ function Provider({ children }) {
       authorized: false,
       keyup: false,
       prompt: {
-         visible: true,
-         type: 'loading'
+         visible: false,
+         type: null
       },
+
+      // OLD
       selected_race: null,
       loaded: null,
       message: {
@@ -163,10 +209,7 @@ function Provider({ children }) {
 
    return (
       <Context.Provider value={{ state, dispatch }}>
-         <Prompt />
-         <div id="wrapper">
-            { children }
-         </div>
+         { children }
       </Context.Provider>
    );
 }

@@ -122,7 +122,7 @@ function update_position({ event, last_event, last_position, resolution }) {
    } else { return last_position; }
 }
 
-// CALCULATE SELECTOR DIMENSIONS
+// FETCH SELECTOR DIMENSIONS
 function dimensions() {
    const wrapper = document.getElementById("map-wrapper");
 

@@ -1,4 +1,4 @@
-import React, { useState, cloneElement } from 'react';
+import React, { useState, cloneElement, Children } from 'react';
 import { Link } from 'react-router-dom';
 
 function Main({ children, header, link }) {
@@ -64,21 +64,15 @@ function Single({ link, header }) { return (
 )}
 
 // LINK WITH SUBMENU
-function Multi({ showSubmenu, hideSubmenu, header, style, children }) {
-   
-   // CLONE CHILDREN TO PASS FUNC
-   const cloned = React.Children.map(children, child =>
-      cloneElement(child, { hide: hideSubmenu })
-   );
-   
-   return (
-      <li className='more' onMouseEnter={ showSubmenu } onMouseLeave={ hideSubmenu }>
-         { header }
-         <div id="submenu" style={ style }>
-            { cloned }
-         </div>
-      </li>
-   )
-}
+function Multi({ showSubmenu, hideSubmenu, header, style, children }) { return (
+   <li className='more' onMouseEnter={ showSubmenu } onMouseLeave={ hideSubmenu }>
+      { header }
+      <div id="submenu" style={ style }>
+         { Children.map(children, child =>
+            cloneElement(child, { hide: hideSubmenu })
+         )}
+      </div>
+   </li>
+)}
 
 export default Main;

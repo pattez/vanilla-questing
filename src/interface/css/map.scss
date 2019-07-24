@@ -2,7 +2,9 @@
    width: 1440px;
    height: 960px;
    position: absolute;
-   transition: 0.2s;
+   transition-property: background, top, left, opacity;
+   transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
+   opacity: 0;
 
    #primary-inner, #secondary-inner {
       stroke-width: 4px;
@@ -71,7 +73,7 @@
    background: rgba(0, 0, 0, 0.24);
    position: absolute;
    height: 100%;
-   transition: 0.2s;
+   transition: opacity 0.2s;
    cursor: pointer;
    width: 10%;
    background-repeat: no-repeat;

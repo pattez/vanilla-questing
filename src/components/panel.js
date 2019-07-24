@@ -1,15 +1,13 @@
-import React, { useContext, useState } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Context } from "../context";
-
+import React, { useState } from 'react';
 import '../interface/css/panel.scss';
 
 import Level from './panel/status/level';
 import Progress from './panel/status/progress';
 import Hearthstone from './panel/status/hearthstone';
 import Tab from './panel/tab';
+import Clipboard from './panel/clipboard';
 import Objectives from './panel/objectives/objectives';
-import Quests from './panel/quests/quests';
+import Quests from './panel/questlog/quests';
 
 function Panel() {
 
@@ -20,7 +18,7 @@ function Panel() {
    });
 
    // TOGGLE PANEL CONTENT
-   const toggle = () => {
+   function toggle() {
       set_local({
          objectives: !local.objectives,
          quests: !local.quests
@@ -44,7 +42,7 @@ function Panel() {
                   func={ toggle }
                   selected={ local.quests }
                />
-               <Copy />
+               <Clipboard />
             </div>
          </div>
          <div id='logs'>
@@ -54,29 +52,6 @@ function Panel() {
             </div>
          </div>
       </div>
-   )
-}
-
-// COPY TO CLIPBOARD
-function Copy() {
-
-   // GLOBAL STATE
-   const { state, dispatch } = useContext(Context);
-
-   const message = () => {
-      dispatch({
-         type: 'show-message',
-         payload: {
-            type: 'good',
-            value: 'link copied to clipboard'
-         }
-      })
-   }
-
-   return (
-      <CopyToClipboard text={ 'http://vanilla-questing.me/' + state.data.race + '/' + state.current } onCopy={ message }>
-         <div id={ 'link' }>Link</div>
-      </CopyToClipboard>
    )
 }
 

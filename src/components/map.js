@@ -1,47 +1,35 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Context } from "../context";
-
-import EventListener from 'react-event-listener';
-import { next, previous } from "../funcs/browsing";
-import { autocenter, update_position, dimensions } from "../funcs/map";
-
 import '../interface/css/map.scss';
 
+import EventListener from 'react-event-listener';
+import { dimensions } from "../funcs/map";
+import { next, previous } from "../funcs/browsing";
+import { sleep } from "../funcs/misc";
+
 import PrevNext from './map/prevnext';
-import Markers from './map/markers';
+import Container from './map/container';
 
 function Map() {
 
    // GLOBAL STATE
    const { state, dispatch } = useContext(Context);
 
-   // MAP STATE
+   // LOCAL STATE
    const [local, set_local] = useState({
       prevnext: false,
-      resolution: null,
-      style: null,
-      enabled: false,
-      last_event: null,
-      last_position: null
-   });
-
-   // CHANGE RESOLUTION
-   const change_resolution = () => {
-      set_local({
-         ...local,
-         resolution: dimensions()
-      })
-   }
+      resolution: null
+   })
 
    // SHOW/HIDE PREVNEXT PANELS
    const prevnext = {
-      show: () => {
+      show: function() {
          set_local({
             ...local,
             prevnext: true
          })
       },
-      hide: () => {
+      hide: function() {
          set_local({
             ...local,
             prevnext: false
@@ -49,95 +37,37 @@ function Map() {
       }
    }
 
-   // MAP MOVEMENT MODES
-   const movement = {
-      enable: (event) => {
-         event.target.parentElement.style.transition = "none";
-   
-         set_local({
-            ...local,
-            enabled: true,
-            last_event: event
-         })
-      },
-      disable: (event) => {
-         if (local.enabled) {
-            event.target.parentElement.style.transition = "0.2s";
-      
-            set_local({
-               ...local,
-               enabled: false
-            })
-         }
-      },
-      moving: (event) => {
-         event.persist();
-         if (local.enabled) {
-
-            // FIND NEW POSITION
-            const position = update_position({
-               event: event,
-               last_event: local.last_event,
-               last_position: local.last_position,
-               resolution: local.resolution
-            })
-
-            set_local({
-               ...local,
-               last_event: event,
-               last_position: position,
-               style: {
-                  ...local.style,
-                  left: position.x + 'px',
-                  top: position.y + 'px',
-               }
-            })
-         }
-      }
+   // UPDATE RESOLUTION
+   function update_resolution() {
+      set_local({
+         ...local,
+         resolution: dimensions()
+      })
    }
 
    // ON INITIAL LOAD
    useEffect(() => {
-      change_resolution();
-   }, [state.profiles])
+      sleep(200).then(() => {
 
-   // CHANGE POSITION
-   useEffect(() => {
-      if (local.resolution !== null) {
+         // WAIT FOR MAP SELECTOR RESOLUTION TO SETTLE, THEN MEASURE SELECTOR
+         update_resolution();
          
-         // FIND CENTER COORDINATES
-         const position = autocenter({
-            waypoints: state.data.route[state.current].waypoints,
-            resolution: local.resolution
+         // WAIT ANOTHER MILLISECOND, THEN TRANSITION OPACITY
+         sleep(100).then(() => {
+            document.getElementById("map").style.opacity = 1;
          })
-
-         set_local({
-            ...local,
-            last_position: position,
-            style: {
-               backgroundImage: 'url(' + require('../interface/images/maps/' + state.data.route[state.current].zone + '.jpg') + ')',
-               left: position.x + 'px',
-               top: position.y + 'px',
-            }
-         })
-
-      }
-   }, [local.resolution, state.current, state.data.route[state.current].zone])
+      })
+   }, [])
 
    return (
       <div onMouseOver={ prevnext.show } onMouseOut={ prevnext.hide }>
          <EventListener
             target={ 'window' }
-            onResize={ change_resolution }
+            onResize={ update_resolution }
          />
-         <svg
-            id={ 'map' }
-            style={ local.style }
-            onMouseDown={ movement.enable }
-            onMouseUp={ movement.disable }
-            onMouseLeave={ movement.disable }
-            onMouseMove={ movement.moving }
-         ><Markers /></svg>
+         <Container
+            resolution={ local.resolution }
+         />
          <PrevNext
             type={ 'prev' }
             visibility={ local.prevnext }
@@ -149,6 +79,7 @@ function Map() {
             func={() => { next(state, dispatch) }}
          />
       </div>
-)}
+   )
+}
 
 export default Map;

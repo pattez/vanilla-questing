@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Context } from "../context";
 import { sleep } from "../funcs/misc";
-
 import '../interface/css/prompt.scss';
 
 import ImportRoute from './prompt/import_route';

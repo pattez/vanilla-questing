@@ -1,42 +1,35 @@
-import { sleep } from "./misc";
-
 // STORAGE KEY
 const key = 'profiles';
 
 // HANDLE LEGACY ITEMS & FILL HASHMAP
 function check() {
-   return new Promise((resolve, reject) => {
 
-      // FETCH STORAGE & OBJECTIFY
-      let storage = JSON.parse(localStorage.getItem(key));
+   // FETCH STORAGE & OBJECTIFY
+   let storage = JSON.parse(localStorage.getItem(key));
 
-      // LEGACY KEYS
-      const legacy = ['vanilla-questing', 'horde', 'dev'];
+   // LEGACY KEYS
+   const legacy = ['vanilla-questing', 'horde', 'dev'];
 
-      // REMOVE LEGACY KEYS IF THEY EXIST
-      legacy.forEach(item => {
-         if (localStorage.getItem(item) !== null) {
-            localStorage.removeItem(item);
-         }
-      })
+   // REMOVE LEGACY KEYS IF THEY EXIST
+   legacy.forEach(item => {
+      if (localStorage.getItem(item) !== null) {
+         localStorage.removeItem(item);
+      }
+   })
 
-      // IF STORAGE KEY DOESNT EXISTS
-      if (localStorage.getItem(key) === null) {
-         
-         // OVERWRITE STORAGE VAR
-         storage = {
-            profiles: []
-         }
-
-         // STRINGIFY & SET IT
-         localStorage.setItem(key, JSON.stringify(storage));
+   // IF STORAGE KEY DOESNT EXISTS
+   if (localStorage.getItem(key) === null) {
+      
+      // OVERWRITE STORAGE VAR
+      storage = {
+         profiles: []
       }
 
-      // GIVE THE PAGE A SECOND TO STABILIZE DIMENSIONS, THEN RESOLVE
-      sleep(1000).then(() => {
-         resolve(new Map(storage.profiles));
-      });
-   })
+      // STRINGIFY & SET IT
+      localStorage.setItem(key, JSON.stringify(storage));
+   }
+
+   return new Map(storage.profiles);
 }
 
 // FETCH HASHMAP OF PROFILES

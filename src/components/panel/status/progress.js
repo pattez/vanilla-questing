@@ -7,23 +7,26 @@ function Progress() {
    // GLOBAL STATE
    const { state, dispatch } = useContext(Context);
 
-   // LOCAL STATE
+   // LOCAL PROGRESS STATE
    const [local, set_local] = useState({
-      progress: 0,
+      progress: null,
+      width: {}
    })
 
-   // RECALIBRATE LEVEL VALUES
+   // RECALIBRATE PROGRESS
    useEffect(() => {
 
       // FIND PERCENTAGE
-      const current_progress = ((state.current / (state.data.route.length - 1)) * 100).toFixed(2) + '%';
+      const current = ((state.current / (state.data.route.length - 1)) * 100).toFixed(2) + '%';
 
+      // UPDATE LOCAL STATE
       set_local({
-         progress: current_progress,
+         progress: current,
          width: {
-            width: current_progress
+            width: current
          }
       })
+
    }, [state.current, state.data])
 
    return (
@@ -31,7 +34,7 @@ function Progress() {
          <div className="split">
             <div>Progress</div>
             <div>{ local.progress }</div>
-            <div id="bar" style={ local.width }></div>
+            <div id="bar" style={ local.width } />
          </div>
       </div>
    )

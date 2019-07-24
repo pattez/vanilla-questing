@@ -123,7 +123,7 @@
    "nugget slugs": 3922,
    "report to kadrak": 6541,
    "naga at the zoram strand": 6442,
-   "allegiance to the old gods": 6565,
+   "allegiance to the old gods": [6564, 6565],
    "the warsong reports": 6543,
    "echeyakee": 881,
    "serena bloodfeather": 876,
@@ -285,7 +285,7 @@
    "raising spirits": [672, 674, 675],
    "call to arms": [677, 678, 679],
    "stones of binding": 651,
-   "foul magics": 671,
+   "foul magics": [671, 673],
    "guile of the raptor": [701, 702, 847],
    "sigil of strom": 639,
    "dalaran patrols": 545,
@@ -824,5 +824,14 @@
    "dark ceremony": 2979,
    "the gordunni orb": 3002,
    "ship schedule": 2876,
-   "guarding secrets": [4882, 4883]
+   "guarding secrets": [4882, 4883],
+   "claim rackmore's treasure": 6161,
+   "razzeric's tweaking": 1187,
+   "safety first": [1188, 1189],
+   "the lost report": 1238,
+   "the severed head": 1239,
+   "the troll witchdoctor": 1240,
+   "marg speaks": 1261,
+   "report to zor": 1262,
+   "service to the horde": 7541
 }
