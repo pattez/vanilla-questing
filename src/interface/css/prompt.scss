@@ -20,7 +20,7 @@
          text-transform: uppercase;
          margin-bottom: 5px;
       }
-   
+
       #create, #import, #export {
          background: rgba(0, 0, 0, 0.473);
          min-width: 300px;
@@ -40,7 +40,7 @@
             color: #333333;
             flex: 1;
          }
-         
+
          // BUTTONS
          #good, #bad {
             background: rgba(87, 194, 65, 0.897);
@@ -51,11 +51,11 @@
             transition: 0.3s;
             padding: 3px 5px;
          }
-         
+
          #good {
             cursor: pointer;
          }
-         
+
          #bad {
             background: rgba(194, 65, 65, 0.897);
             border: 2px solid rgba(199, 70, 70, 0.897);
@@ -184,7 +184,7 @@
                background-position: center right 10px;
             }
          }
-         
+
          .container:last-child {
             margin-right: 0px;
          }
@@ -211,11 +211,11 @@
             padding: 3px 5px;
             width: 100%;
          }
-         
+
          #good {
             cursor: pointer;
          }
-         
+
          #bad {
             background: rgba(194, 65, 65, 0.897);
             border: 2px solid rgba(199, 70, 70, 0.897);
@@ -275,5 +275,5 @@
    bottom: 0;
    right: 0;
    position: absolute;
-   z-index: -1;   
+   z-index: -1;
 }

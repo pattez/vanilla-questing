@@ -12,10 +12,9 @@ import ImportProfiles from './prompt/import_profiles';
 
 // PROMPT CONTAINER
 function Prompt() {
-   
+
    // GLOBAL STATE
    const { state, dispatch } = useContext(Context);
-
    // TOGGLE VISIBILITY BASED ON STATE
    useEffect(() => {
       if (state.prompt.visible) {

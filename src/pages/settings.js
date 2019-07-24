@@ -3,16 +3,17 @@ import { Context } from "../context";
 
 import Swapper from '../components/settings/swapper';
 import Keybind from '../components/settings/keybind';
+import { Redirect } from 'react-router-dom';
 
 import '../interface/css/settings.scss';
 
 function Settings() {
-   
+
    // GLOBAL CONTEXT
    const { state } = useContext(Context);
 
    // IF STATE HAS LOADED
-   if (state.settings !== null) {
+   if (state.settings !== null && state.authorized) {
       return (
          <div id={ 'settings' }>
             <div className={ 'header' }>Modify Keybindings</div>
@@ -47,7 +48,7 @@ function Settings() {
       )
 
    // OTHERWISE, RETURN NOTHING
-   } else { return null; }
+   } else { return <Redirect to={ '/' } /> }
 }
 
 export default Settings;

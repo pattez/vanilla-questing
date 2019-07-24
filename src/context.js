@@ -146,6 +146,8 @@ function Provider({ children }) {
       current: 0,
       profiles: null,
       settings: null,
+      authorized: false,
+      keyup: false,
       prompt: {
          visible: true,
          type: 'loading'

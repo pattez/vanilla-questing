@@ -63,7 +63,7 @@ function Objective({ index, quests, waypoint }) {
       <div className="section">
          <div className="title">
             <div>{ index + 1 }. { waypoint.header }</div>
-            <div class="waypoint">{ waypoint.coords.x + '.' + waypoint.coords.y }</div>
+            <div className="waypoint">{ waypoint.coords.x + '.' + waypoint.coords.y }</div>
          </div>
          { content() }
       </div>

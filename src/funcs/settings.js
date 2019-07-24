@@ -6,7 +6,7 @@ function check() {
 
    // IF SETTINGS KEY DOENST EXIST
    if (localStorage.getItem(key) === null) {
-      
+
       // SET DEFAULT SETTINGS
       set({
          keybinds: 'enable',
@@ -72,9 +72,16 @@ function update_prop(settings, payload) {
    return settings;
 }
 
+function update_state (item, payload) {
+   const { prop, value } = payload;
+   item[prop] = value;
+   return item;
+}
+
 export {
    check,
    exists,
    update_bind,
-   update_prop
+   update_prop,
+   update_state
 }
