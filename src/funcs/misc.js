@@ -12,10 +12,10 @@ function sleep (time) {
 
 // SHORTEN STRING
 function shorten(string) {
-   
+
    // MAX CHARACTER LIMIT
-   const max_length = 25;
-   
+   const max_length = 100;
+
    // CHECK IF THE STRING IS LONGER THAN 22 CHARACTERS
    if (string.length > max_length) {
 
