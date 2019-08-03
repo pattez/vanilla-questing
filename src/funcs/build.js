@@ -50,7 +50,7 @@ function route(race) {
          quests: alliance_quests,
          route: [
             ...races.alliance.get(race).path,
-            ...alliance_shared.path
+            // ...alliance_shared.path
          ]
       }
 
