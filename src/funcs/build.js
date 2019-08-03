@@ -4,6 +4,9 @@ import gnorf from '../routes/alliance/gnorf.json';
 import nelf from '../routes/alliance/nelf.json';
 import alliance_shared from '../routes/alliance/shared.json';
 import alliance_quests from '../routes/alliance/quests.json';
+import Darkshore from '../routes/alliance/Darkshore_16-17.json';
+import Gilnash1 from '../routes/alliance/Gilnash1-12Jud_Edition_-_Warrior.json';
+import Gilnash2 from '../routes/alliance/Gilnash12-23Jud_Edition_-_All_Classes.json';
 
 // HORDE
 import trorc from '../routes/horde/trorc.json';
@@ -22,7 +25,10 @@ const races = {
       ['human', human],
       ['dwarf', gnorf],
       ['gnome', gnorf],
-      ['nelf', nelf]
+      ['nelf', nelf],
+      ['darkshore', Darkshore],
+      ['gilnash1', Gilnash1],
+      ['gilnash2', Gilnash2],
    ]),
    horde: new Map([
       ['orc', trorc],
@@ -90,7 +96,7 @@ function specific({ race, block }) {
 
    // DEFAULT TO RANDOM ROUTE
    let response = random();
-   
+
    // MAKE SURE THE RACE EXISTS
    if (exists(race)) {
 
